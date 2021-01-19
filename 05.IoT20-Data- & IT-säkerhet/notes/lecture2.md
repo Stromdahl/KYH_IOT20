@@ -1,161 +1,103 @@
-# hello
+# Asemetrisk kryptering 2020-01-19
 
-this is text
+###### Att göra efter lektionen:
 
-* 123
+* läsa på om RSA
 
-* 123
+* Inlämning RSA
 
-* 123
-1. one
+* 
 
-2. two
+#### Cryptopals
 
-3. three
+python: **tobytearray**
 
-```Java
-System.out.println("Hello");
-```
+----
 
----
+Jag skickar ett krypterat medelande -> mottagern krypterar och skickar tillbaka meddelandet ==> jag avkrypterar min kryptering och skickar till motagaren ==> motagren avkrypterar medelandet
 
-{
-"title": YAML front matter example
-"key": {
-  "subkey1": "value 1",
-  "subkey2": "value 2"
-}
-}
+#### 2 vägs funktioner
 
----
+ta ett tal - dubblerar det - ger er talet och talar om att det är dubblerar det - ni delar det med 2 och läser medelandet
 
-title: YAML
-key: valule
+##### 1 vägs funkton
 
----
+en funktion som är svår att rotera tillbaka
 
-`print("Hello World")`
+blå + gul = grön
 
-$1+1=2$
+grön != blå + gul
 
-~~wut~~
+#### RSA
 
-<div>
-<h1> hello </h1>
-</div>
+rsa använder privata och publicka nycklar
 
-> quote
+meddelanden som har krypterats med den publika nyclen kan endast deckrypteras  med den publika nyclken
 
-___
+privat och publika nyklar
 
----
+* säkerheten bakom
 
----
+* hur man får till säkerheten
+1. välj två stora primtal, kalla dom p och q 2 3 5 7 11
 
-*italic* **bold** _italics_ __bold__ **bold _italic_**
-
-~~scratch this~~
-
-~~this to~~
-
-<mark>test</mark>
-
-1. ett
-
-2. två
+2. ex
    
-   1. två ett
+   * p = 5
    
-   2. två två
-
-3. tre
-
-4. First ordered list item
-
-5. Another item
+   * q = 11
    
-   * Unordered sub-list. 
-
-6. Actual numbers don't matter, just that it's a number
+   * n = p * q = 55
    
-   1. Ordered sub-list
+   * φ(n) = 40
+   
+   * e = 7
+   
+   $ e * d mod φ(n) = 1 $
 
-7. And another item.
+3. vällj ett tal e
 
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+4. 
+* Eulers fi-function eller Euler's totient function
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+* Om n är ett positivs heltal, tå definieras fi(n) som telet positiva heltal mindre än eller lika med n som är relativs prima med n. till exempel är fi(8) = 4 eftersom de fyra talen 1 3 5 och 7 är relativs prima till 8
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
+* två tal anses vara relativs prima om dertas störta gemensamma delare
+  
+  faktorisera 55 så har du p och q
 
-[I'm an inline-style link](https://www.google.com)
+beräkna d
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+| φ(n) | φ(n) |
+| ---- | ---- |
+| 40   | 40   |
+| 7    | 1    |
+| 5    |      |
+|      |      |
+|      |      |
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+p = 5
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+q = 11
 
-[You can use numbers for reference-style link definitions][1]
+n = 55
 
-Or leave it empty and use the [link text itself].
+φ(n)
 
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
-example.com (but not on Github, for example).
+6 har faktorerna 2 och 3
 
-Some text to show that the reference links can follow later.
+om vi vill att n sska ll bara 4096 birtar skal p och q vara 2048
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
+två tal som är 617 bitar
 
-Here's our logo (hover to see the title text):
+det är ett tal som 1234 siffror,
 
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+talet gogol är stort , $10 ^ 100$
 
-Reference-style: 
-![alt text][logo]
+* kryptera texten bil
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+* ascii 2, 9, 12
 
-Inline `code` has `back-ticks around` it.
+* m ^ e mod n = c
 
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print s
-```
-
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a <b>tag</b>.
-```
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      | $12   |
-| zebra stripes | are neat      | $1    |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| *Still*  | `renders` | **nicely** |
-| 1        | 2         | 3          |
-
-
+Har jag er pu
