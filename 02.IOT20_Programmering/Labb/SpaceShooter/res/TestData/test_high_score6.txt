@@ -1,3 +1,0 @@
-Player1,1000
-Player2,2000
-Player3,3000
