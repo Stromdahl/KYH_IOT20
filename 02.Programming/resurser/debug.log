@@ -1,0 +1,4 @@
+[1016/155857.315:ERROR:directory_reader_win.cc(43)] FindFirstFile: Det går inte att hitta sökvägen. (0x3)
+[1016/174144.653:ERROR:process_reader_win.cc(155)] SuspendThread: Åtkomst nekad. (0x5)
+[1016/174144.653:ERROR:process_reader_win.cc(127)] NtOpenThread: {Åtkomst nekad} En process har begärt åtkomst till ett objekt, men har inte de rättigheter som krävs. (0xc0000022)
+[1016/174144.653:ERROR:exception_snapshot_win.cc(100)] thread ID 15240 not found in process
