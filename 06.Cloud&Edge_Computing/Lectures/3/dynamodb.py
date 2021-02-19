@@ -1,14 +1,12 @@
 import boto3
 import json
-
-access_key = "ojlnvyxg0zsamDRialjdbpr0SlTtstKX3CaV36++"
-access_id = "AKIAYVW5WG46DAH3HHNL"
+from config.py import *
 
 
 def get_resource():
     dynamodb = boto3.resource('dynamodb',
-                                aws_access_key_id = access_id,
-                                aws_secret_access_key = access_key,
+                                aws_access_key_id = ACCESS_KEY,
+                                aws_secret_access_key = ACCESS_ID,
                                 region_name="eu-north-1")
     return dynamodb
 
